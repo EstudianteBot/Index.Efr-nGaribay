@@ -18,42 +18,46 @@ body .MenuPrincipal {
     padding: 21px 144px;
 }
 
-body .MenuPrincipal .logo {
+body .MenuPrincipal .Logo {
     border-radius: 5px;
     height: 52px;
     width: 250px;
 }
 
-body .MenuPrincipal .Logo img{
-    padding-top: 10px;
+body .MenuPrincipal .Logo img {
+    vertical-align: top;
 }
 
-body .MenuPrincipal .Items{
+body .MenuPrincipal .Logo .isotipo {
+    display: none;
+}
+
+body .MenuPrincipal .MenuItems {
     align-items: center;
-    color: #118596;
     display: flex;
-    padding-right: 54px;
+}
+
+body .MenuPrincipal .MenuItems > span {
+    display: none;
+}
+
+body .MenuPrincipal .MenuItems .Items {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 54px;
+    width: 250px;
 }
 
 body .MenuPrincipal .MenuItems .Items p {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-    padding: 0px 35.5px;
-    padding-inline: 20px;
-    padding-right: 100px;
-}
-
-body .MenuPrincipal .MenuItems{
-    display: flex;
+    color: #118596;
 }
 
 body .MenuPrincipal .MenuItems .Boton {
     background: #118596;
-    border: none;
+    border: 0;
     border-radius: 5px;
     color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
     cursor: pointer;
     padding: 16px 32px;
 }
@@ -63,12 +67,50 @@ body .MenuPrincipal .MenuItems .Boton:hover {
     border: 2px solid #118596;
     border-radius: 5px;
     color: #118596;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
+    cursor: pointer;
     padding: 14px 30px;
 }
 
-/* Menu de navigacion */
+/* Media queries */
+@media only screen and (max-width: 1366px) {
+    body .MenuPrincipal {
+        padding: 21px 56px;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    body .MenuPrincipal {
+        padding: 21px 56px;
+    }
+
+    body .MenuPrincipal .MenuItems > span {
+        display: unset;
+        color: #118596;
+    }
+
+    body .MenuPrincipal .MenuItems .Items {
+        display: none;
+    }
+
+    body .MenuPrincipal .MenuItems .Boton {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+    body .MenuPrincipal .Logo .normal {
+        display: none;
+    }
+
+    body .MenuPrincipal .Logo .isotipo {
+        display: unset;
+        width: 20%;
+    }
+}
+
+
+/* Section 1 */
 
 body .Section1 {
     position: relative;
@@ -80,10 +122,10 @@ body .Section1 .Imagen img {
 }
 
 body .Section1 .Titulo-boton {
-    border: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
     left: 50%;
     position: absolute;
     top: 50%;
@@ -95,18 +137,14 @@ body .Section1 .Titulo-boton h1 {
     color: #FFB600;
     font-size: 48px;
     text-align: center;
-    padding: 32px;
     width: 100%;
 }
 
 body .Section1 .Titulo-boton .Boton-amarillo {
-    background-color: #FFB600;
+    background: #ffb600;
     border: none;
     border-radius: 5px;
-    color: black;
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 32px;
     padding: 16px 32px;
 }
 
@@ -115,10 +153,29 @@ body .Section1 .Titulo-boton .Boton-amarillo:hover {
     border: none solid #FFB600;
     border-radius: 5px;
     color: #FFB600;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 32px;
+    cursor: pointer;
     padding: 16px 32px;
 }
+
+/* Media queries */
+@media only screen and (max-width: 360px) {
+    body .Section1 .Imagen img {
+        height: 500px;
+        object-fit: cover;
+        width: 360px;
+    }
+
+    body .Section1 .Titulo-boton {
+        width: 360px;
+        gap: 40px;
+    }
+
+    body .Section1 .Titulo-boton h1 {
+        font-size: 32px;
+    }
+}
+
+/* Beneficios */
 
 body .Beneficios {
     display: flex;
@@ -155,22 +212,47 @@ body .Beneficios .Beneficios-card p {
     width: 100%;
 }
 
+/* Media queries */
+@media only screen and (max-width: 1366px) {
+    body .Beneficios {
+        gap: 20px;
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    body .Beneficios {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 144px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    body .Beneficios {
+        padding: 0 20px;
+        height: 1000px;
+    }
+
+    body .Beneficios .Beneficios-card p {
+        font-size: 16px;
+    }
+}
+
+/* Más Información */
+
 body .MasInformacion {
-    background-color: #f1f1f1;
-    width: 100%;
+    background-color: #F1F1F1;
+    justify-content: center;
     padding: 89px 144px;
 }
 
 body .MasInformacion .Contenido {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     height: 212px;
-}
-
-body .MasInformacion .Contenido > p {
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
+    margin-bottom: 24px;
 }
 
 body .MasInformacion .Contenido .Titulo {
@@ -192,553 +274,310 @@ body .MasInformacion .Contenido .Titulo > span {
     width: 15%;
 }
 
+body .MasInformacion .Contenido > p {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+body .MasInformacion .FeatBoton {
+    background: none;
+    border: 2px solid #118596;
+    border-radius: 5px;
+    display: none;
+    color: #118596;
+    margin-left: 80px;
+    padding: 16px 32px;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1366px) {
+    body .MasInformacion {
+        padding: 89px 56px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    body .MasInformacion {
+        height: 500px;
+        padding: 40px 20px;
+        width: 100%;
+    }
+
+    body .MasInformacion .Contenido {
+        height: 300px;
+    }
+
+    body .MasInformacion .Contenido .Titulo > span {
+        width: 35%;
+    }
+
+    body .MasInformacion .Contenido > p {
+        font-size: 16px;
+    }
+
+    body .MasInformacion .Video {
+        display: none;
+    }
+
+    body .MasInformacion .FeatBoton {
+        display: unset;
+    }
+}
+
+/* Cards */
+
 body .Cards {
+    align-items: start;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 34px;
     padding: 89px 144px;
 }
 
 body .Cards .Card1 {
-    background: none;
-    border: 2px solid black;
-    border-radius: 5px;
+    background-color: #F1F1F1;
     display: flex;
-    width: 700px;
+    flex-direction: row;
+    width: 600px;
 }
 
-body .Cards .Card1 .Imagen-Card {
-    flex: 300%;
+body .Cards .Card1 .Contenido-card {
+    flex: 60%;
+    padding: 55px 34px;
+    text-align: center;
 }
 
-body .Cards .Card1 .Imagen-Card > img {
+body .Cards .Card1 .Contenido-card .Titulo-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body .Cards .Card1 .Contenido-card .Titulo-card > h4 {
+    font-size: 34px;
+    margin-bottom: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+body .Cards .Card1 .Contenido-card .Titulo-card > span {
+    border: 2px solid #118596;
+    width: 60%;
+}
+
+body .Cards .Card1 .Contenido-card > p {
+    font-size: 24px;
+    margin: 24px 0;
+    text-align: center;
+}
+
+body .Cards .Card1 .Imagen-card {
+    flex: 50%;
+}
+
+body .Cards .Card1 .Imagen-card > img {
     height: 100%;
     object-fit: cover;
-    vertical-align: top;
     width: 100%;
 }
 
-body .Cards .Card1 .Contenido-Card {
-    align-items: start;
+body .Cards .Card1 .Contenido-card button {
+    background: none;
+    border: 2px solid #118596;
+    border-radius: 5px;
+    color: #118596;
+    cursor: pointer;
+    padding: 16px 32px;
+}
+
+body .Cards .Card1 .Contenido-card button:hover {
+    background: #118596;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 16px 32px;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1366px) {
+    body .Cards {
+        flex-wrap: wrap;
+        padding: 89px 200px;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    body .Cards {
+        padding: 89px 56px;
+    }
+
+    body .Cards .Card1 {
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    body .Cards {
+        padding: 89px 0++;
+    }
+
+    body .Cards .Card1 {
+        flex-direction: column-reverse;
+    }
+
+    body .Cards .Card1 .Imagen-card > img {
+        height: 344px;
+        object-fit: cover;
+        width: 360px;
+    }
+}
+
+/* Info */
+
+body .Info {
     display: flex;
-    flex-basis: content;
     flex-wrap: wrap;
+    gap: 24px;
     justify-content: center;
-    padding: 55px 34px;
-    width: 100%;
+    padding: 144px 144px;
 }
 
-body .Cards .Card1 .Contenido-Card > p {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-body .Cards .Card1 .Contenido-Card .Titulo-Card {
-    align-items: start;
+body .Info .Titulo-info {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
-    width: 100%;
 }
 
-body .Cards .Card1 .Contenido-Card .Titulo-Card > h4 {
+body .Info .Titulo-info > h4 {
     font-size: 34px;
     text-align: center;
     width: 100%;
-    padding-bottom: 5px;
 }
 
-body .Cards .Card1 .Contenido-Card .Titulo-Card > span {
-    border: 1px solid #118596;
-    width: 50%;
-}
-
-body .Cards .Card1 .Contenido-Card button {
-    background: none;
+body .Info .Titulo-info > span {
     border: 2px solid #118596;
-    border-radius: 5px;
-    color: #118596;
-    cursor: pointer;
-    font-size: large;
-    padding: 16px 32px;
+    gap: 15px;
+    width: 75%;
 }
 
-body .Cards .Card1 .Contenido-Card button:hover {
-    background: #118596;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: large;
-    padding: 16px 32px;
-}
-
-body .Informacion {
-    height: 100%;
-    width: 100%;
-    padding: 89px 144px;
-}
-
-body .Informacion .Contenido {
-    display: flex;
-    flex-wrap: wrap;
-    height: 212px;
-    padding-bottom: 120px;
-}
-
-body .Informacion .Contenido > p {
+body .Info p {
     font-size: 24px;
     text-align: center;
-    width: 100%;
 }
 
-body .Informacion .Contenido .Titulo {
-    align-items: start;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 30px;
-    width: 100%;
-}
-
-body .Informacion .Contenido .Titulo > h4 {
-    font-size: 40px;
-    text-align: center;
-    width: 100%;
-}
-
-body .Informacion .Contenido .Titulo > span {
-    border: 1px solid #118596;
-    width: 25%;
-}
-
-body .Informacion button {
+body .Info button {
     background: none;
     border: 2px solid #118596;
     border-radius: 5px;
     color: #118596;
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 32px;
-    padding: 14px 30px;
-    left: 50%;
     padding: 16px 32px;
-    position: absolute;
-    transform: translate(-50%, -50%);
 }
 
-
-body .Informacion button:hover {
+body .Info button:hover {
     background: #118596;
     border-radius: 5px;
     color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 32px;
+    cursor: pointer;
     padding: 16px 32px;
 }
+
+/* Media queries */
+@media only screen and (max-width: 1366px) {
+    body .Info {
+        padding: 144px 56px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    body .Info {
+        padding: 100px 24px;
+    }
+
+    body .Info .Titulo-info > span {
+        width: 50%;
+    }
+    
+    body .Info p {
+        font-size: 16px;
+    }
+    
+}
+
+/* Footer */
 
 body .Footer {
     align-items: center;
-    background: #f1f1f1;
+    background: #F1F1F1;
     display: flex;
     justify-content: space-between;
-    padding: 100px 200px;
+    padding: 100px 300px;
 }
 
-body .Footer .Izquierda {
+body .Footer .izquierda {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     width: 500px;
 }
 
-body .Footer .Izquierda .Terminos-Privacidad {
+body .Footer .izquierda .terminos-privacidad {
+    display: flex;
+    gap: 14px;
+}
+
+body .Footer .izquierda .terminos-privacidad > span {
+    border: 1px solid #118596;
+}
+
+body .Footer .derecha {
     display: flex;
     gap: 24px;
 }
 
-body  .Footer .Izquierda .Terminos-Privacidad > span {
-    border: 2px solid #118696;
-}
-
-body .Footer .Derecha {
-    display: flex;
-    gap: 24px;
-}
-
-body .Footer .Derecha .Enlaces {
+body .Footer .derecha .enlaces {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-@media screen and (max-width: 1366px){
-    body {
-        background: #ffffff;
-    }
-    
-    body .MenuPrincipal {
-        background: #ffffff;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        padding: 16px 32px;
-    }
-    
-    body .MenuPrincipal .Logo {
-        border-radius: 5px;
-        height: 52px;
-        width: 250px;
-    }
-    
-    body .MenuPrincipal .Logo img{
-        padding-top: 10px;
-    }
-    
-    body .MenuPrincipal .Items{
-        align-items: center;
-        color: #118596;
-        display: flex;
-        padding-right: 54px;
-    }
-    
-    body .MenuPrincipal .MenuItems .Items p {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: x-large;
-        padding: 0px 35.5px;
-        padding-inline: 20px;
-        padding-right: 54px;
-    }
-    
-    body .MenuPrincipal .MenuItems{
-        display: flex;
-    }
-    
-    body .MenuPrincipal .MenuItems .Boton {
-        background: #118596;
-        border: none;
-        border-radius: 5px;
-        color: #ffffff;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: x-large;
-        cursor: pointer;
-        padding: 16px 32px;
-    }
-    
-    body .MenuPrincipal .MenuItems .Boton:hover {
-        background: #ffffff;
-        border: 2px solid #118596;
-        border-radius: 5px;
-        color: #118596;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: x-large;
-        padding: 14px 30px;
-    }
-    
-    /* Menu de navigacion */
-    
-    body .Section1 {
-        position: relative;
-    }
-    
-    body .Section1 .Imagen img {
-        height: 719.26px;
-        vertical-align: top;
-        width: 1366px;
-    }
-    
-    body .Section1 .Titulo-boton {
-        border: 2px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        left: 50%;
-        position: absolute;
-        top: 42%;
-        transform: translate(-50%, -50%);
-        width: 900px;
-    }
-    
-    body .Section1 .Titulo-boton h1 {
-        color: #FFB600;
-        font-size: 48px;
-        text-align: center;
-        padding: 58px;
-        width: 100%;
-    }
-    
-    body .Section1 .Titulo-boton .Boton-amarillo {
-        background-color: #FFB600;
-        border: none;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 24px;
-        padding: 16px 32px;
-    }
-    
-    body .Section1 .Titulo-boton .Boton-amarillo:hover {
-        background: black;
-        border: none solid #FFB600;
-        border-radius: 5px;
-        color: #FFB600;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 32px;
-        padding: 16px 32px;
-    }
-    
-    body .Beneficios {
-        display: flex;
-        justify-content: space-between;
-        margin: 144px 0px;
-        padding: 0px 56px;
-        width: 100%;
-    }
-    
-    body .Beneficios .Beneficios-card {
-        align-content: start;
-        display: flex;
-        flex-wrap: wrap;
-        height: 290px;
-        justify-content: center;
-        width: 380px;
-    }
-    
-    body .Beneficios .Beneficios-card span {
-        font-size: 475%;
-        margin-bottom: 24px;
-    }
-    
-    body .Beneficios .Beneficios-card h2 {
-        font-size: 34px;
-        text-align: center;
-        margin-bottom: 24px;
-        width: 100%;
-    }
-    
-    body .Beneficios .Beneficios-card p {
-        font-size: 24px;
-        text-align: center;
-        width: 100%;
-    }
-    
-    body .MasInformacion {
-        background-color: #f1f1f1;
-        width: 100%;
-        padding: 89px 56px;
-    }
-    
-    body .MasInformacion .Contenido {
-        display: flex;
-        flex-wrap: wrap;
-        height: 212px;
-    }
-    
-    body .MasInformacion .Contenido > p {
-        font-size: 24px;
-        text-align: center;
-        width: 100%;
-    }
-    
-    body .MasInformacion .Contenido .Titulo {
-        align-items: start;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    body .MasInformacion .Contenido .Titulo > h4 {
-        font-size: 40px;
-        text-align: center;
-        width: 100%;
-    }
-    
-    body .MasInformacion .Contenido .Titulo > span {
-        border: 1px solid #118596;
-        width: 15%;
-    }
-    
-    body .Cards {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        padding: 89px 233px;
-    }
-    
-    body .Cards .Card1 {
-        background: none;
-        border: 2px solid black;
-        border-radius: 5px;
-        display: flex;
-        width: 700px;
-    }
-    
-    body .Cards .Card1 .Imagen-Card {
-        flex: 300%;
-    }
-    
-    body .Cards .Card1 .Imagen-Card > img {
-        height: 100%;
-        object-fit: cover;
-        vertical-align: top;
-        width: 100%;
-    }
-    
-    body .Cards .Card1 .Contenido-Card {
-        align-items: start;
-        display: flex;
-        flex-basis: content;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 55px 34px;
-        width: 100%;
-    }
-    
-    body .Cards .Card1 .Contenido-Card > p {
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    
-    body .Cards .Card1 .Contenido-Card .Titulo-Card {
-        align-items: start;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    body .Cards .Card1 .Contenido-Card .Titulo-Card > h4 {
-        font-size: 34px;
-        text-align: center;
-        width: 100%;
-        padding-bottom: 5px;
-    }
-    
-    body .Cards .Card1 .Contenido-Card .Titulo-Card > span {
-        border: 1px solid #118596;
-        width: 50%;
-    }
-    
-    body .Cards .Card1 .Contenido-Card button {
-        background: none;
-        border: 2px solid #118596;
-        border-radius: 5px;
-        color: #118596;
-        cursor: pointer;
-        font-size: large;
-        padding: 16px 32px;
-    }
-    
-    body .Cards .Card1 .Contenido-Card button:hover {
-        background: #118596;
-        border-radius: 5px;
-        color: #ffffff;
-        font-size: large;
-        padding: 16px 32px;
-    }
-    
-    body .Informacion {
-        height: 100%;
-        width: 100%;
-        padding: 89px 144px;
-    }
-    
-    body .Informacion .Contenido {
-        display: flex;
-        flex-wrap: wrap;
-        height: 212px;
-        padding-bottom: 120px;
-    }
-    
-    body .Informacion .Contenido > p {
-        font-size: 24px;
-        text-align: center;
-        width: 100%;
-    }
-    
-    body .Informacion .Contenido .Titulo {
-        align-items: start;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-bottom: 30px;
-        width: 100%;
-    }
-    
-    body .Informacion .Contenido .Titulo > h4 {
-        font-size: 40px;
-        text-align: center;
-        width: 100%;
-    }
-    
-    body .Informacion .Contenido .Titulo > span {
-        border: 1px solid #118596;
-        width: 25%;
-    }
-    
-    body .Informacion button {
-        background: none;
-        border: 2px solid #118596;
-        border-radius: 5px;
-        color: #118596;
-        cursor: pointer;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 32px;
-        padding: 14px 30px;
-        left: 50%;
-        padding: 16px 32px;
-        position: absolute;
-        transform: translate(-50%, -50%);
-    }
-    
-    
-    body .Informacion button:hover {
-        background: #118596;
-        border-radius: 5px;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 32px;
-        padding: 16px 32px;
-    }
-    
+/* Media queries */
+@media only screen and (max-width: 1366px) {
     body .Footer {
-        align-items: center;
-        background: #f1f1f1;
-        display: flex;
-        justify-content: space-between;
-        padding: 100px 200px;
+        padding: 100px 100px;
     }
-    
-    body .Footer .Izquierda {
-        display: flex;
+}
+
+@media only screen and (max-width: 830px) {
+    body .Footer {
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding: 100px 300px;
+    }
+
+    body .Footer .izquierda {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    body .Footer {
+        padding: 100px 24px;
+    }
+
+    body .Footer .izquierda {
+        width: 300px;
+    }
+
+    body .Footer .izquierda > p {
+        text-align: center;
+    }
+
+    body .Footer .derecha {
         flex-wrap: wrap;
-        gap: 16px;
-        width: 500px;
-    }
-    
-    body .Footer .Izquierda .Terminos-Privacidad {
-        display: flex;
-        gap: 24px;
-    }
-    
-    body  .Footer .Izquierda .Terminos-Privacidad > span {
-        border: 2px solid #118696;
-    }
-    
-    body .Footer .Derecha {
-        display: flex;
-        gap: 24px;
-    }
-    
-    body .Footer .Derecha .Enlaces {
-        display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 80px;
     }
 }
